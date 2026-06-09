@@ -1,0 +1,1640 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Кафедра спортивного менеджменту — КНУБА</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --yellow:   #F5C800;
+  --yellow-d: #D4A800;
+  --black:    #111111;
+  --dark:     #1A1A1A;
+  --ink:      #111111;
+  --ink-l:    #444444;
+  --muted:    #888888;
+  --bg:       #FFFFFF;
+  --bg-alt:   #F4F4F2;
+  --border:   #E0E0DC;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-alt);
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ── HEADER ── */
+.site-header {
+  background: var(--dark);
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo-mark {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.logo-mark span {
+  display: block;
+  background: var(--yellow);
+  height: 3px;
+  border-radius: 0;
+}
+.logo-mark span:nth-child(1) { width: 24px; }
+.logo-mark span:nth-child(2) { width: 18px; }
+.logo-mark span:nth-child(3) { width: 12px; }
+.logo-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  color: white;
+  letter-spacing: .04em;
+  line-height: 1.2;
+}
+.logo-text small {
+  display: block;
+  font-weight: 500;
+  font-size: 10px;
+  color: var(--yellow);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.header-tag {
+  background: var(--yellow);
+  color: var(--black);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 2px;
+}
+
+/* ── HERO ── */
+.hero {
+  background: var(--dark);
+  padding: 64px 32px 56px;
+}
+.hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 48px;
+  align-items: end;
+}
+.hero-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  margin-bottom: 16px;
+}
+.hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: clamp(32px, 5vw, 56px);
+  color: white;
+  line-height: 1.05;
+  letter-spacing: -.02em;
+  margin-bottom: 16px;
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--yellow);
+}
+.hero-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,.65);
+  max-width: 540px;
+  line-height: 1.65;
+  margin-bottom: 28px;
+}
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.pill {
+  background: rgba(245,200,0,.12);
+  border: 1px solid rgba(245,200,0,.3);
+  color: var(--yellow);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 2px;
+}
+.hero-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-end;
+}
+.stat-block {
+  text-align: right;
+}
+.stat-block .num {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 52px;
+  color: var(--yellow);
+  line-height: 1;
+  letter-spacing: -.03em;
+}
+.stat-block .lbl {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.45);
+  margin-top: 4px;
+}
+
+/* ── TABS ── */
+.tab-bar {
+  background: var(--dark);
+  border-top: 1px solid rgba(255,255,255,.08);
+  position: sticky;
+  top: 56px;
+  z-index: 190;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tab-bar::-webkit-scrollbar { display: none; }
+.tab-bar-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  gap: 0;
+}
+.tab-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 14px 20px 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.5);
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+  transition: color .15s, border-color .15s;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.tab-btn:hover { color: rgba(255,255,255,.85); }
+.tab-btn.active {
+  color: var(--yellow);
+  border-bottom-color: var(--yellow);
+}
+.tab-btn .tab-num {
+  background: rgba(245,200,0,.15);
+  color: var(--yellow);
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+.tab-btn.active .tab-num { background: var(--yellow); color: var(--black); }
+
+/* ── MAIN CONTENT ── */
+.page { max-width: 1100px; margin: 0 auto; padding: 48px 32px 96px; }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* ── SECTION LABEL ── */
+.sec-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.sec-label::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background: var(--yellow);
+  vertical-align: middle;
+  margin-right: 8px;
+}
+h2.sec-h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  color: var(--ink);
+  margin-bottom: 8px;
+  line-height: 1.15;
+}
+h3.sec-h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+.sec-divider {
+  height: 2px;
+  background: var(--yellow);
+  width: 48px;
+  margin-bottom: 32px;
+}
+
+/* ── YELLOW BOX ── */
+.yellow-box {
+  background: var(--yellow);
+  color: var(--black);
+  padding: 20px 24px;
+  border-radius: 2px;
+  margin: 24px 0;
+}
+.yellow-box strong { font-weight: 800; font-size: 15px; display: block; margin-bottom: 6px; }
+.yellow-box p { font-size: 13.5px; line-height: 1.6; }
+
+/* ── DARK BOX ── */
+.dark-box {
+  background: var(--dark);
+  color: white;
+  padding: 24px 28px;
+  border-radius: 2px;
+  margin: 24px 0;
+}
+.dark-box .label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  margin-bottom: 10px;
+}
+.dark-box p { font-size: 14px; color: rgba(255,255,255,.8); line-height: 1.65; }
+
+/* ── CARD GRID ── */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+.card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 20px;
+  border-top: 3px solid var(--yellow);
+}
+.card-icon { font-size: 28px; margin-bottom: 12px; }
+.card h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--ink);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.card p { font-size: 13px; color: var(--ink-l); line-height: 1.6; }
+.card .card-tag {
+  display: inline-block;
+  background: var(--yellow);
+  color: var(--black);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 2px;
+  margin-top: 10px;
+}
+
+/* ── TABLE ── */
+.tbl-wrap { overflow-x: auto; margin: 24px 0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  background: white;
+  border: 1px solid var(--border);
+}
+thead th {
+  background: var(--dark);
+  color: white;
+  padding: 12px 16px;
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+thead th:first-child { border-left: 4px solid var(--yellow); }
+tbody tr:nth-child(even) { background: var(--bg-alt); }
+tbody tr:hover { background: #FFFDE8; }
+tbody td { padding: 11px 16px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.5; }
+tbody tr:last-child td { border-bottom: none; }
+.tag {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 2px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.tag-y  { background: var(--yellow); color: var(--black); }
+.tag-dk { background: var(--dark);   color: white; }
+.tag-gr { background: var(--bg-alt); color: var(--muted); border: 1px solid var(--border); }
+
+/* ── ACCORDION ── */
+.acc-wrap { margin: 8px 0; }
+.acc { border: 1px solid var(--border); border-radius: 2px; overflow: hidden; margin-bottom: 8px; background: white; }
+.acc-btn {
+  width: 100%;
+  background: white;
+  border: none;
+  padding: 16px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+  transition: background .12s;
+}
+.acc-btn:hover { background: var(--bg-alt); }
+.acc-btn.open { background: #FFFDE8; border-bottom: 2px solid var(--yellow); }
+.acc-ico { font-size: 20px; flex-shrink: 0; }
+.acc-title-text { flex: 1; }
+.acc-title-text strong { display: block; font-weight: 700; font-size: 14px; color: var(--ink); }
+.acc-title-text span { font-size: 12px; color: var(--muted); }
+.acc-arrow { color: var(--muted); transition: transform .2s; font-size: 12px; }
+.acc-btn.open .acc-arrow { transform: rotate(180deg); color: var(--yellow-d); }
+.acc-body { display: none; padding: 20px 20px 20px 54px; font-size: 13.5px; color: var(--ink-l); line-height: 1.7; }
+.acc-body.open { display: block; }
+.acc-body ul { margin: 8px 0 12px 18px; }
+.acc-body li { margin-bottom: 5px; }
+.acc-body strong { color: var(--ink); font-weight: 700; }
+.acc-body .norm {
+  background: var(--bg-alt);
+  border-left: 3px solid var(--yellow);
+  padding: 10px 14px;
+  margin-top: 12px;
+  font-size: 12.5px;
+  border-radius: 0 2px 2px 0;
+}
+.acc-body .norm a { color: var(--ink); font-weight: 600; }
+.acc-body p { margin-bottom: 10px; }
+.acc-body p:last-child { margin-bottom: 0; }
+
+/* ── PERSON CARD ── */
+.person-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+.person-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.person-head {
+  background: var(--dark);
+  padding: 16px 18px 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.person-ava {
+  width: 44px; height: 44px;
+  background: var(--yellow);
+  border-radius: 2px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.person-meta { flex: 1; }
+.person-meta strong {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: white;
+  line-height: 1.3;
+}
+.person-meta .rate {
+  background: rgba(245,200,0,.2);
+  color: var(--yellow);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 2px;
+  display: inline-block;
+  margin-top: 5px;
+  letter-spacing: .06em;
+}
+.person-body { padding: 14px 18px 16px; }
+.person-body .qual {
+  font-size: 12.5px;
+  color: var(--ink-l);
+  line-height: 1.55;
+  margin-bottom: 10px;
+}
+.person-body .teaches {
+  font-size: 12px;
+  color: var(--muted);
+  font-style: italic;
+}
+.person-body .teaches::before {
+  content: '▶ ';
+  color: var(--yellow-d);
+  font-style: normal;
+}
+.person-must {
+  border-top: 3px solid var(--yellow);
+}
+.person-rec {
+  border-top: 3px solid var(--border);
+}
+
+/* ── FLOW STEPS ── */
+.flow { display: flex; flex-direction: column; gap: 0; margin: 24px 0; }
+.flow-item { display: flex; gap: 0; }
+.flow-left { display: flex; flex-direction: column; align-items: center; width: 40px; flex-shrink: 0; }
+.flow-dot {
+  width: 32px; height: 32px;
+  background: var(--yellow);
+  color: var(--black);
+  border-radius: 2px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 13px;
+  font-family: 'Montserrat', sans-serif;
+  flex-shrink: 0;
+}
+.flow-line { width: 2px; background: var(--border); flex: 1; margin: 4px 0; min-height: 20px; }
+.flow-item:last-child .flow-line { display: none; }
+.flow-content {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 14px 18px;
+  margin: 0 0 12px 14px;
+  flex: 1;
+}
+.flow-content strong { display: block; font-weight: 700; color: var(--ink); margin-bottom: 4px; font-size: 14px; }
+.flow-content p { font-size: 13px; color: var(--ink-l); line-height: 1.6; }
+
+/* ── SEMESTER BLOCK ── */
+.sem-header {
+  background: var(--dark);
+  color: white;
+  padding: 12px 20px;
+  border-left: 4px solid var(--yellow);
+  margin: 32px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.sem-header .sem-num {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--yellow);
+}
+.sem-header .sem-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* ── GRAD TRACKS ── */
+.track-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+.track-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.track-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--yellow);
+}
+.track-card .track-ico { font-size: 32px; margin-bottom: 12px; }
+.track-card h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.track-card .track-qual {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--yellow-d);
+  margin-bottom: 10px;
+}
+.track-card ul {
+  list-style: none;
+  font-size: 12.5px;
+  color: var(--ink-l);
+  line-height: 1.6;
+}
+.track-card ul li::before { content: '— '; color: var(--yellow-d); font-weight: 700; }
+.track-card .employers {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  font-size: 11.5px;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ── NORM LIST ── */
+.norm-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }
+.norm-list li {
+  background: white;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--yellow);
+  padding: 14px 18px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  border-radius: 0 2px 2px 0;
+}
+.norm-list .ncode {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  background: var(--dark);
+  color: white;
+  padding: 3px 8px;
+  border-radius: 2px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.norm-list .nbody { font-size: 13.5px; line-height: 1.6; color: var(--ink-l); }
+.norm-list .nbody strong { color: var(--ink); font-weight: 700; }
+.norm-list .nbody a { color: var(--ink); font-weight: 600; border-bottom: 1px solid var(--yellow-d); text-decoration: none; }
+
+/* ── EVENTS ── */
+.event-list { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }
+.event-item {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 16px 18px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.event-item .e-ico {
+  font-size: 24px;
+  flex-shrink: 0;
+  width: 40px;
+  text-align: center;
+}
+.event-item .e-body h5 {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.event-item .e-body p { font-size: 13px; color: var(--ink-l); line-height: 1.55; }
+.event-item .e-tag { margin-top: 8px; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--dark);
+  padding: 32px;
+  text-align: center;
+}
+footer p {
+  font-size: 12px;
+  color: rgba(255,255,255,.45);
+  line-height: 1.7;
+}
+footer strong { color: var(--yellow); }
+footer a { color: rgba(255,255,255,.6); text-decoration: none; }
+
+@media (max-width: 680px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-stats { flex-direction: row; align-items: flex-start; }
+  .page { padding: 32px 16px 64px; }
+  .tab-bar-inner { padding: 0 16px; }
+  .header-inner { padding: 0 16px; }
+  .acc-body { padding-left: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-logo">
+      <div class="logo-mark">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="logo-text">
+        КНУБА
+        <small>Інститут ветеранів</small>
+      </div>
+    </div>
+    <span class="header-tag">#СПОРТ · МЕНЕДЖМЕНТ</span>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <p class="hero-eyebrow">Кафедра · КНУБА · 2026</p>
+      <h1>КАФЕДРА<br><em>СПОРТИВНОГО</em><br>МЕНЕДЖМЕНТУ</h1>
+      <p class="hero-sub">Готуємо тренерів, менеджерів, суддів, аналітиків і керівників для спортивної індустрії. Лише практики. Лише реальні кейси.</p>
+      <div class="hero-pills">
+        <span class="pill">#ПАДЕЛ</span>
+        <span class="pill">#ТЕННІС</span>
+        <span class="pill">#МЕНЕДЖМЕНТ</span>
+        <span class="pill">#МАРКЕТИНГ</span>
+        <span class="pill">#EVENT</span>
+        <span class="pill">#073 МЕНЕДЖМЕНТ</span>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-block">
+        <div class="num">2</div>
+        <div class="lbl">РОКИ НАВЧАННЯ</div>
+      </div>
+      <div class="stat-block">
+        <div class="num">4</div>
+        <div class="lbl">СПЕЦІАЛІЗАЦІЇ</div>
+      </div>
+      <div class="stat-block">
+        <div class="num">120</div>
+        <div class="lbl">ЄКТС КРЕДИТІВ</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB BAR -->
+<div class="tab-bar">
+  <div class="tab-bar-inner">
+    <button class="tab-btn active" onclick="switchTab('basics', this)">
+      <span class="tab-num">01</span> Основи
+    </button>
+    <button class="tab-btn" onclick="switchTab('staff', this)">
+      <span class="tab-num">02</span> Особовий склад
+    </button>
+    <button class="tab-btn" onclick="switchTab('disciplines', this)">
+      <span class="tab-num">03</span> Дисципліни
+    </button>
+    <button class="tab-btn" onclick="switchTab('graduates', this)">
+      <span class="tab-num">04</span> Кого випускаємо
+    </button>
+    <button class="tab-btn" onclick="switchTab('events', this)">
+      <span class="tab-num">05</span> Заходи і практика
+    </button>
+    <button class="tab-btn" onclick="switchTab('norms', this)">
+      <span class="tab-num">06</span> Нормативна база
+    </button>
+  </div>
+</div>
+
+<div class="page">
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- TAB 01: ОСНОВИ -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div id="tab-basics" class="tab-panel active">
+
+  <p class="sec-label">Загальна інформація</p>
+  <h2 class="sec-h2">Про кафедру</h2>
+  <div class="sec-divider"></div>
+
+  <div class="yellow-box">
+    <strong>Перша в Україні кафедра з фокусом на ракеткові види спорту та падел.</strong>
+    <p>Готуємо не теоретиків — готуємо людей, які з першого дня роботи знають як влаштований спортивний бізнес зсередини. Навчання будується на реальних кейсах, практиці у клубах і спілкуванні з діючими директорами та тренерами.</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon">🎓</div>
+      <h4>Диплом держзразка</h4>
+      <p>Фаховий молодший бакалавр зі спеціальності 073 «Менеджмент», спеціалізація «Спортивний менеджмент».</p>
+      <span class="card-tag">2 роки</span>
+    </div>
+    <div class="card">
+      <div class="card-icon">📅</div>
+      <h4>Форма навчання</h4>
+      <p>Заочна / вечірня. 3–4 зустрічі на місяць — субота і неділя. Теорія онлайн, практика на корті.</p>
+      <span class="card-tag">32–48 год/міс</span>
+    </div>
+    <div class="card">
+      <div class="card-icon">👥</div>
+      <h4>Набір на потік</h4>
+      <p>20–25 студентів. Два типи вступників: після школи/коледжу та з вищою освітою на перекваліфікацію.</p>
+      <span class="card-tag">20–25 осіб</span>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏛️</div>
+      <h4>Розміщення в КНУБА</h4>
+      <p>Факультет урбаністики та просторового планування або міжфакультетська кафедра підпорядкована ректорату.</p>
+      <span class="card-tag">ФУПП КНУБА</span>
+    </div>
+  </div>
+
+  <div class="dark-box">
+    <p class="label">⚠️ Мінімум для ліцензування — Постанова КМУ №1187</p>
+    <p>Для отримання ліцензії МОН потрібно: <strong style="color:var(--yellow)">мінімум 3 НПП</strong> у проєктній групі, з них <strong style="color:var(--yellow)">≥2 зі ступенем к.н. або д.н.</strong> Завідувач кафедри — <strong style="color:var(--yellow)">обов'язково к.н. або д.н.</strong>, обирається вченою радою на конкурсі. Після відкриття — <strong style="color:var(--yellow)">мінімум 5 штатних НПП</strong>. Педагоги без ступеня — не більше 30% навантаження.</p>
+  </div>
+
+  <h3 class="sec-h3" style="margin-top:40px;">Ключові терміни</h3>
+
+  <div class="acc-wrap">
+    <div class="acc">
+      <button class="acc-btn" onclick="toggleAcc(this)">
+        <span class="acc-ico">🎓</span>
+        <div class="acc-title-text"><strong>НПП — Науково-педагогічний працівник</strong><span>Хто це і чим відрізняється від «просто викладача»</span></div>
+        <span class="acc-arrow">▼</span>
+      </button>
+      <div class="acc-body">
+        <p><strong>НПП</strong> — це викладач університету, який одночасно навчає студентів і займається науковими дослідженнями. Він зобов'язаний публікувати статті, брати участь у конференціях, керувати науковими роботами.</p>
+        <ul>
+          <li><strong>Завідувач кафедри</strong> — керівник, к.н. або д.н., обирається на конкурсі</li>
+          <li><strong>Доцент</strong> — к.н. + звання, основна «робоча» посада</li>
+          <li><strong>Старший викладач</strong> — без ступеня, досвід ≥3 роки</li>
+          <li><strong>Запрошений практик</strong> — людина з реального ринку, ступінь не потрібен</li>
+        </ul>
+        <div class="norm">📋 Ст. 53 Закону «Про вищу освіту» №1556-VII — <a href="https://zakon.rada.gov.ua/laws/show/1556-18" target="_blank">zakon.rada.gov.ua</a></div>
+      </div>
+    </div>
+
+    <div class="acc">
+      <button class="acc-btn" onclick="toggleAcc(this)">
+        <span class="acc-ico">📄</span>
+        <div class="acc-title-text"><strong>Ліцензія vs Акредитація</strong><span>Два різних документи, два різних органи — не плутати</span></div>
+        <span class="acc-arrow">▼</span>
+      </button>
+      <div class="acc-body">
+        <p><strong>Ліцензія</strong> = дозвіл МОН набирати студентів за спеціальністю. Потрібна один раз. Без неї — старт неможливий.</p>
+        <p><strong>Акредитація</strong> = оцінка якості конкретної програми від НАЗЯВО. Кожні 5 років. Без акредитації — диплом без відмітки «акредитовано».</p>
+        <p><strong>Важливо для КНУБА:</strong> якщо університет вже має ліцензію на 073 «Менеджмент» — нова кафедра запускається БЕЗ повторного ліцензування. Потрібна лише акредитація нової ОП.</p>
+        <div class="norm">📋 КМУ №1187 (ліцензування) + Наказ МОН №686/2024 (акредитація) — <a href="https://zakon.rada.gov.ua/laws/show/1187-2015-п" target="_blank">zakon.rada.gov.ua</a></div>
+      </div>
+    </div>
+
+    <div class="acc">
+      <button class="acc-btn" onclick="toggleAcc(this)">
+        <span class="acc-ico">⚖️</span>
+        <div class="acc-title-text"><strong>Ставка 1.0 / 0.5 / погодинно</strong><span>Як рахується навантаження і що йде в штат</span></div>
+        <span class="acc-arrow">▼</span>
+      </button>
+      <div class="acc-body">
+        <ul>
+          <li><strong>1.0 ставка</strong> = повна зайнятість, ~720–900 год/рік. Штатний співробітник.</li>
+          <li><strong>0.5 ставки</strong> = неповна зайнятість, ~360–450 год/рік. Може суміщати.</li>
+          <li><strong>Погодинник</strong> = оплата за фактичні години. У штат не входить, у ліцензійний мінімум не рахується.</li>
+        </ul>
+        <p>Для ліцензування враховуються тільки <strong>штатні НПП</strong> (1.0 або 0.5 ставки). 4×1.0 + 5×0.5 = <strong>6.5 штатних НПП</strong> — вище мінімуму в 5 осіб.</p>
+        <div class="norm">📋 Ст. 56 Закону «Про вищу освіту», Наказ МОН №450 — <a href="https://zakon.rada.gov.ua/laws/show/1556-18" target="_blank">zakon.rada.gov.ua</a></div>
+      </div>
+    </div>
+
+    <div class="acc">
+      <button class="acc-btn" onclick="toggleAcc(this)">
+        <span class="acc-ico">🎯</span>
+        <div class="acc-title-text"><strong>ЄКТС — що за кредити</strong><span>Чому 120 кредитів = 2 роки</span></div>
+        <span class="acc-arrow">▼</span>
+      </button>
+      <div class="acc-body">
+        <p><strong>1 кредит ЄКТС = 30 академічних годин</strong> роботи студента (лекції + практика + самостійна).</p>
+        <ul>
+          <li>Фаховий молодший бакалавр = <strong>120 кредитів</strong> = 3600 год = 2 роки</li>
+          <li>Бакалавр = 240 кредитів = 4 роки</li>
+          <li>Магістр = 90–120 кредитів понад бакалавра</li>
+        </ul>
+        <div class="norm">📋 Ст. 1 Закону «Про вищу освіту» + Постанова КМУ №87/2019</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /tab-basics -->
+
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- TAB 02: ОСОБОВИЙ СКЛАД -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div id="tab-staff" class="tab-panel">
+
+  <p class="sec-label">Хто потрібен</p>
+  <h2 class="sec-h2">Особовий склад кафедри</h2>
+  <div class="sec-divider"></div>
+
+  <div class="yellow-box">
+    <strong>Жодних теоретиків. Тільки люди з досвідом.</strong>
+    <p>Академічний ступінь — там де вимагає закон. Решта позицій — практики з реальним бекграундом: директори клубів, тренери з турнірами, агенти, маркетологи брендів. Студент має вчитися у людини, яка сама це робила.</p>
+  </div>
+
+  <h3 class="sec-h3" style="margin-top:32px;">🔴 Обов'язковий штат (ліцензія вимагає)</h3>
+  <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">Мінімум для ліцензування: 3 НПП зі ступенем. Для повноцінної роботи — склад нижче.</p>
+
+  <div class="person-grid">
+    <div class="person-card person-must">
+      <div class="person-head">
+        <div class="person-ava">🏆</div>
+        <div class="person-meta">
+          <strong>Завідувач кафедри</strong>
+          <span class="rate">1.0 ставка · К.Н. або Д.Н. · ОБОВ'ЯЗКОВО</span>
+        </div>
+      </div>
+      <div class="person-body">
+        <p class="qual">Менеджмент спортивних організацій або спортивний менеджмент. Обирається вченою радою на конкурсі (ст. 54 ЗУ). Реальний досвід управління спортивною структурою — обов'язковий.</p>
+        <p class="teaches">Стратегічний менеджмент, керівництво кафедрою</p>
+      </div>
+    </div>
+
+    <div class="person-card person-must">
+      <div class="person-head">
+        <div class="person-ava">📊</div>
+        <div class="person-meta">
+          <strong>Викладач менеджменту</strong>
+          <span class="rate">1.0 ставка · К.Н. · ОБОВ'ЯЗКОВО</span>
+        </div>
+      </div>
+      <div class="person-body">
+        <p class="qual">К.н. у менеджменті або економіці. Знає P&L спортивного клубу не з підручника. Публікації у фахових виданнях — вимога МОН.</p>
+        <p class="teaches">Стратегічний менеджмент, HR, операції клубу</p>
+      </div>
+    </div>
+
+    <div class="person-card person-must">
+      <div class="person-head">
+        <div class="person-ava">📣</div>
+        <div class="person-meta">
+          <strong>Маркетолог</strong>
+          <span class="rate">1.0 ставка · К.Н. або досвід · ОБОВ'ЯЗКОВО</span>
+        </div>
+      </div>
+      <div class="person-body">
+        <p class="qual">Реальний досвід у digital-маркетингу спортивних організацій або брендів. Знає як побудувати спонсорський пакет. К.н. бажаний, але досвід ≥5 р. рівноцінний.</p>
+        <p class="teaches">Спортивний маркетинг, SMM, брендинг, спонсорство</p>
+      </div>
+    </div>
+
+    <div class="person-card person-must">
+      <div class="person-head">
+        <div class="person-ava">🎾</div>
+        <div class="person-meta">
+          <strong>Тренер-методолог (падел / ракеткові)</strong>
+          <span class="rate">1.0 ставка · Сертифікат FIP · ОБОВ'ЯЗКОВО</span>
+        </div>
+      </div>
+      <div class="person-body">
+        <p class="qual">FIP Level 2+ або WPT-сертифікація. Тренерський стаж ≥5 років. Провів реальні турніри. Знає методику від дитячого до профі-рівня. Це ключова людина кафедри.</p>
+        <p class="teaches">Методика тренування паделу, фізична підготовка, педагогіка спорту</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sec-h3" style="margin-top:40px;">🟡 Рекомендований склад (для повноцінної роботи)</h3>
+
+  <div class="person-grid">
+    <div class="person-card person-rec">
+      <div class="person-head">
+        <div class="person-ava">⚖️</div>
+        <div class="person-meta">
+          <strong>Юрист</strong>
+          <span class="rate">0.5 ставки · Практикуючий</span>
+        </div>
+      </div>
+      <div class="person-body">
+        <p class="qual">Спортивне або комерційне право. Знає трансферний ринок, агентські договори, ліцензування ФІФА/УЄФА. К.н. бажаний, але не обов'язковий.</p>
+        <p class="teaches">Спортивне право, контракти, трансфери</p>
+      </div>
+    </div>
+
+    <div class="person-card person-rec">
+      <div class="person-head">
+        <div class="person-ava">🧠</div>
+        <div class="person-meta">
+          <strong>Психолог</strong>
+          <span class="rate">0.5 ставки · Спортивна психологія</span>
+        </div>
+      </div>
+      <div class="person-body">
+        <p class="qual">Спортивна або організаційна психологія. Працював з командами чи атлетами. Розуміє специфіку стресу, мотивації і командоутворення у спорті.</p>
+        <p class="teaches">Психологія команди, лідерство, мотивація</p>
+      </div>
+    </div>
+
+    <div class="person-card person-rec">
+      <div class="person-head">
+        <div class="person-ava">📈</div>
+        <div class="person-meta">
+          <strong>Аналітик / Data</strong>
+          <span class="rate">0.5 ставки · IT + спорт</span>
+        </div>
+      </div>
+      <div class="person-body">
+        <p class="qual">IT або Data Science з реальним досвідом у спортивній аналітиці. Знає Tableau, Power BI, CRM-системи. Може вчити аналізу гри через відео.</p>
+        <p class="teaches">CRM, аналітика даних, відеоаналіз</p>
+      </div>
+    </div>
+
+    <div class="person-card person-rec">
+      <div class="person-head">
+        <div class="person-ava">🎤</div>
+        <div class="person-meta">
+          <strong>Event-менеджер</strong>
+          <span class="rate">0.5 ставки · Практик заходів</span>
+        </div>
+      </div>
+      <div class="person-body">
+        <p class="qual">Провів мінімум 5–10 спортивних турнірів різного масштабу. Знає логістику, безпеку, трансляції, роботу з волонтерами і спонсорами на місці.</p>
+        <p class="teaches">Організація змагань, логістика, event-продакшн</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sec-h3" style="margin-top:40px;">⭐ Залучені спеціалісти — серце програми</h3>
+
+  <div class="dark-box">
+    <p class="label">Принцип відбору</p>
+    <p>Ці люди — не «лектори зі сторони». Вони активні гравці індустрії, які беруть 2–4 сесії на семестр і дають студентам те, що жоден підручник не дасть: живий досвід, контакти, реальні кейси. <strong style="color:var(--yellow)">Відбираємо тільки тих, хто досяг результату — не тих, хто про нього пише.</strong></p>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Хто</th>
+          <th>Яку тему веде</th>
+          <th>Що дає студентам</th>
+          <th>Формат</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>CEO / Директор падел-клубу</strong><br><span style="font-size:12px;color:var(--muted)">Діючий власник або GM клубу</span></td>
+          <td>Операційне управління клубом, P&L, персонал, ціноутворення</td>
+          <td>Реальна цифра: скільки коштує відкрити клуб, де губляться гроші</td>
+          <td><span class="tag tag-y">Майстер-клас</span></td>
+        </tr>
+        <tr>
+          <td><strong>Профі-гравець / Топ-тренер</strong><br><span style="font-size:12px;color:var(--muted)">WPT / рейтинг FIP</span></td>
+          <td>Техніка вищого рівня, підготовка атлета, тренерська кар'єра</td>
+          <td>Різниця між «навчити гравця» і «підготувати чемпіона»</td>
+          <td><span class="tag tag-y">Практика на корті</span></td>
+        </tr>
+        <tr>
+          <td><strong>Комерційний директор спортклубу</strong><br><span style="font-size:12px;color:var(--muted)">Динамо, Шахтар або НБА-рівень</span></td>
+          <td>Спонсорство, партнерства, монетизація аудиторії</td>
+          <td>Як будується спонсорський пакет на €50k–€1M</td>
+          <td><span class="tag tag-dk">Лекція + кейс</span></td>
+        </tr>
+        <tr>
+          <td><strong>Маркетолог бренду у спорті</strong><br><span style="font-size:12px;color:var(--muted)">Nike, Puma, Parimatch, Wilson</span></td>
+          <td>Бренд-активації, ambassador-програми, digital-кампанії</td>
+          <td>Як бренд обирає амбасадора і скільки за це платить</td>
+          <td><span class="tag tag-dk">Лекція + кейс</span></td>
+        </tr>
+        <tr>
+          <td><strong>Спортивний агент</strong><br><span style="font-size:12px;color:var(--muted)">ФІФА-ліцензія або ECA</span></td>
+          <td>Трансферний ринок, контракти, переговори, агентська діяльність</td>
+          <td>Як влаштований ринок переходів і що підписує агент</td>
+          <td><span class="tag tag-dk">Лекція</span></td>
+        </tr>
+        <tr>
+          <td><strong>Директор турніру</strong><br><span style="font-size:12px;color:var(--muted)">WPT / ATP / федерація</span></td>
+          <td>Організація турнірів: від заявки до трансляції</td>
+          <td>Операційний checklist: 180 пунктів до першого матчу</td>
+          <td><span class="tag tag-y">Воркшоп</span></td>
+        </tr>
+        <tr>
+          <td><strong>Суддя міжнародної категорії</strong><br><span style="font-size:12px;color:var(--muted)">FIP / ITF ліцензія</span></td>
+          <td>Правила гри, суддівська практика, кваліфікація</td>
+          <td>Як здати суддівський іспит FIP і де працювати суддею</td>
+          <td><span class="tag tag-y">Практична сесія</span></td>
+        </tr>
+        <tr>
+          <td><strong>Спортивний лікар / реабілітолог</strong><br><span style="font-size:12px;color:var(--muted)">Досвід роботи з командою</span></td>
+          <td>Профілактика травм, відновлення, медичний супровід</td>
+          <td>Типові травми в паделі та як їх попередити</td>
+          <td><span class="tag tag-gr">2 лекції/рік</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div><!-- /tab-staff -->
+
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- TAB 03: ДИСЦИПЛІНИ -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div id="tab-disciplines" class="tab-panel">
+
+  <p class="sec-label">Навчальний план</p>
+  <h2 class="sec-h2">Дисципліни — 4 семестри</h2>
+  <div class="sec-divider"></div>
+
+  <div class="yellow-box">
+    <strong>Обов'язкова дисципліна — «Ракеткові види спорту. Падел.»</strong>
+    <p>Це не факультатив і не секція. Це профільна дисципліна, яка проходить кожен семестр з наростанням рівня — від правил гри до тренерської методики і підготовки до суддівського іспиту FIP. Без неї кафедра — просто черговий «менеджмент».</p>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Блок</th><th>Кредити ЄКТС</th><th>Годин</th><th>%</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Ракеткові види спорту (падел)</strong></td><td>24</td><td>720</td><td><strong style="color:#D4A800">20%</strong></td></tr>
+        <tr><td>Менеджмент і економіка</td><td>25</td><td>750</td><td>21%</td></tr>
+        <tr><td>Маркетинг і комунікації</td><td>20</td><td>600</td><td>17%</td></tr>
+        <tr><td>Право, психологія, аналітика</td><td>16</td><td>480</td><td>13%</td></tr>
+        <tr><td>Спеціалізація (вибіркові)</td><td>15</td><td>450</td><td>12.5%</td></tr>
+        <tr><td>Практика виробнича + переддипломна</td><td>15</td><td>450</td><td>12.5%</td></tr>
+        <tr><td>Кваліфікаційна робота</td><td>5</td><td>150</td><td>4%</td></tr>
+        <tr><td><strong>РАЗОМ</strong></td><td><strong>120</strong></td><td><strong>3600</strong></td><td><strong>100%</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- СЕМЕСТР 1 -->
+  <div class="sem-header">
+    <span class="sem-num">Семестр 01</span>
+    <span class="sem-title">Місяці 1–5 · ФУНДАМЕНТ</span>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Дисципліна</th><th>Год/міс</th><th>Кред</th><th>Хто веде</th><th>Тип</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>🎾 Ракеткові види спорту. Падел — базовий рівень</strong><br><span style="font-size:12px;color:var(--muted)">Правила, корт, інвентар, базова техніка, безпека</span></td>
+          <td>16</td><td>5</td><td>Тренер FIP</td><td><span class="tag tag-y">ОБОВ'ЯЗК</span></td>
+        </tr>
+        <tr>
+          <td><strong>Вступ до спортивного менеджменту</strong><br><span style="font-size:12px;color:var(--muted)">Структура спортивного бізнесу, клуб як організація</span></td>
+          <td>10</td><td>3</td><td>Завідувач</td><td><span class="tag tag-dk">Проф</span></td>
+        </tr>
+        <tr>
+          <td><strong>Основи менеджменту та організаційна теорія</strong></td>
+          <td>10</td><td>3</td><td>Викл. менеджменту</td><td><span class="tag tag-dk">Загальний</span></td>
+        </tr>
+        <tr>
+          <td><strong>Економіка спортивної організації</strong></td>
+          <td>8</td><td>3</td><td>Викл. менеджменту</td><td><span class="tag tag-dk">Проф</span></td>
+        </tr>
+        <tr>
+          <td><strong>Психологія лідерства та команди</strong></td>
+          <td>6</td><td>2</td><td>Психолог</td><td><span class="tag tag-gr">Підтрим</span></td>
+        </tr>
+        <tr>
+          <td><strong>Ділова комунікація і презентації</strong></td>
+          <td>4</td><td>1</td><td>Запрошений практик</td><td><span class="tag tag-gr">Підтрим</span></td>
+        </tr>
+        <tr><td colspan="2" style="color:var(--muted)">РАЗОМ</td><td><strong>17</strong></td><td colspan="2"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- СЕМЕСТР 2 -->
+  <div class="sem-header">
+    <span class="sem-num">Семестр 02</span>
+    <span class="sem-title">Місяці 6–10 · ПРОФІЛЬ</span>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Дисципліна</th><th>Год/міс</th><th>Кред</th><th>Хто веде</th><th>Тип</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>🎾 Ракеткові види спорту. Падел — середній рівень</strong><br><span style="font-size:12px;color:var(--muted)">Тактика гри, парна гра, розбір матчів, перші змагання</span></td>
+          <td>16</td><td>5</td><td>Тренер FIP + профі-гравець</td><td><span class="tag tag-y">ОБОВ'ЯЗК</span></td>
+        </tr>
+        <tr>
+          <td><strong>Спортивний маркетинг: бренд і стратегія</strong></td>
+          <td>10</td><td>3</td><td>Маркетолог</td><td><span class="tag tag-dk">Проф</span></td>
+        </tr>
+        <tr>
+          <td><strong>HR та управління персоналом у спорті</strong></td>
+          <td>8</td><td>3</td><td>Викл. менеджменту</td><td><span class="tag tag-dk">Проф</span></td>
+        </tr>
+        <tr>
+          <td><strong>Спортивне право та ліцензування</strong></td>
+          <td>8</td><td>3</td><td>Юрист-практик</td><td><span class="tag tag-dk">Проф</span></td>
+        </tr>
+        <tr>
+          <td><strong>Digital-маркетинг та SMM у спорті</strong></td>
+          <td>8</td><td>3</td><td>Маркетолог</td><td><span class="tag tag-dk">Проф</span></td>
+        </tr>
+        <tr>
+          <td><strong>Аналітика даних та відеоаналіз</strong></td>
+          <td>6</td><td>2</td><td>Аналітик</td><td><span class="tag tag-gr">Підтрим</span></td>
+        </tr>
+        <tr><td colspan="2" style="color:var(--muted)">РАЗОМ</td><td><strong>19</strong></td><td colspan="2"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- СЕМЕСТР 3 -->
+  <div class="sem-header">
+    <span class="sem-num">Семестр 03</span>
+    <span class="sem-title">Місяці 11–15 · ПРАКТИКА + СПЕЦІАЛІЗАЦІЯ</span>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Дисципліна</th><th>Год/міс</th><th>Кред</th><th>Хто веде</th><th>Тип</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>🎾 Ракеткові види спорту. Суддівство і організація турнірів</strong><br><span style="font-size:12px;color:var(--muted)">Правила FIP/ITF, суддівська практика, проведення турніру</span></td>
+          <td>14</td><td>4</td><td>Тренер FIP + суддя FIP</td><td><span class="tag tag-y">ОБОВ'ЯЗК</span></td>
+        </tr>
+        <tr>
+          <td><strong>Організація спортивних заходів (event)</strong></td>
+          <td>10</td><td>3</td><td>Event-менеджер</td><td><span class="tag tag-dk">Проф</span></td>
+        </tr>
+        <tr>
+          <td><strong>Спонсорство та фандрейзинг у спорті</strong></td>
+          <td>8</td><td>3</td><td>Маркетолог + запр. практик</td><td><span class="tag tag-dk">Проф</span></td>
+        </tr>
+        <tr>
+          <td><strong>Фінансове планування та бюджет клубу</strong></td>
+          <td>8</td><td>3</td><td>Викл. менеджменту</td><td><span class="tag tag-dk">Проф</span></td>
+        </tr>
+        <tr>
+          <td><strong>Вибіркові — блок спеціалізації А</strong></td>
+          <td>8</td><td>4</td><td>За спеціалізацією</td><td><span class="tag tag-gr">Вибірк</span></td>
+        </tr>
+        <tr>
+          <td><strong>Виробнича практика в клубі / федерації</strong></td>
+          <td>—</td><td>7</td><td>Куратор від організації</td><td><span class="tag tag-y">Практика</span></td>
+        </tr>
+        <tr><td colspan="2" style="color:var(--muted)">РАЗОМ</td><td><strong>24</strong></td><td colspan="2"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- СЕМЕСТР 4 -->
+  <div class="sem-header">
+    <span class="sem-num">Семестр 04</span>
+    <span class="sem-title">Місяці 16–24 · МАЙСТЕРНІСТЬ + ВИПУСК</span>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Дисципліна</th><th>Год/міс</th><th>Кред</th><th>Хто веде</th><th>Тип</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>🎾 Ракеткові. Тренерська методика просунутого рівня</strong><br><span style="font-size:12px;color:var(--muted)">Розробка тренувальних програм, робота з різними групами</span></td>
+          <td>12</td><td>4</td><td>Тренер FIP</td><td><span class="tag tag-y">ОБОВ'ЯЗК</span></td>
+        </tr>
+        <tr>
+          <td><strong>Стратегічне управління спортивним клубом</strong></td>
+          <td>10</td><td>3</td><td>Завідувач + CEO-гість</td><td><span class="tag tag-dk">Проф</span></td>
+        </tr>
+        <tr>
+          <td><strong>Міжнародний спортивний менеджмент</strong></td>
+          <td>8</td><td>3</td><td>Завідувач</td><td><span class="tag tag-dk">Проф</span></td>
+        </tr>
+        <tr>
+          <td><strong>Вибіркові — блок спеціалізації Б</strong></td>
+          <td>6</td><td>3</td><td>За спеціалізацією</td><td><span class="tag tag-gr">Вибірк</span></td>
+        </tr>
+        <tr>
+          <td><strong>Переддипломна практика (реальний проєкт)</strong></td>
+          <td>—</td><td>8</td><td>Завідувач + куратор</td><td><span class="tag tag-y">Практика</span></td>
+        </tr>
+        <tr>
+          <td><strong>Кваліфікаційна робота та захист</strong></td>
+          <td>—</td><td>5</td><td>Завідувач</td><td><span class="tag tag-y">Атестація</span></td>
+        </tr>
+        <tr><td colspan="2" style="color:var(--muted)">РАЗОМ</td><td><strong>26</strong></td><td colspan="2"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div><!-- /tab-disciplines -->
+
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- TAB 04: КОГО ВИПУСКАЄМО -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div id="tab-graduates" class="tab-panel">
+
+  <p class="sec-label">Спеціалізації</p>
+  <h2 class="sec-h2">Кого готуємо. Кого випускаємо.</h2>
+  <div class="sec-divider"></div>
+
+  <div class="dark-box">
+    <p class="label">Принцип</p>
+    <p>Студент обирає спеціалізацію наприкінці 2-го семестру. Вибіркові дисципліни (15 кредитів, блоки А і Б) формуються під обраний трек. Базовий блок — однаковий для всіх.</p>
+  </div>
+
+  <div class="track-grid">
+    <div class="track-card">
+      <div class="track-ico">🏋</div>
+      <h4>Тренер</h4>
+      <div class="track-qual">Тренер з паделу / ракеткових видів</div>
+      <ul>
+        <li>Методика тренування дорослих і дітей</li>
+        <li>Сертифікація FIP Level 1–2</li>
+        <li>Вікова педагогіка і психологія</li>
+        <li>Профілактика травм</li>
+        <li>Розробка тренувальних програм</li>
+      </ul>
+      <div class="employers">Клуби паделу, спортшколи, академії, фітнес-мережі</div>
+    </div>
+
+    <div class="track-card">
+      <div class="track-ico">🏢</div>
+      <h4>Менеджер клубу</h4>
+      <div class="track-qual">Менеджер спортивних організацій</div>
+      <ul>
+        <li>Операційне управління клубом</li>
+        <li>P&L, ціноутворення, бронювання</li>
+        <li>Управління персоналом і тренерами</li>
+        <li>Партнерства та ліцензування</li>
+        <li>Масштабування мережі</li>
+      </ul>
+      <div class="employers">Клуби, мережі, федерації, інвестиційні проєкти у спорті</div>
+    </div>
+
+    <div class="track-card">
+      <div class="track-ico">📣</div>
+      <h4>Маркетолог</h4>
+      <div class="track-qual">Спортивний маркетолог</div>
+      <ul>
+        <li>Бренд-менеджмент клубу</li>
+        <li>Спонсорські пакети і переговори</li>
+        <li>SMM, digital, influencer</li>
+        <li>PR і кризові комунікації</li>
+        <li>Побудова fan-community</li>
+      </ul>
+      <div class="employers">Маркетинг-відділи клубів, рекламні агенції, спортивні бренди</div>
+    </div>
+
+    <div class="track-card">
+      <div class="track-ico">🎤</div>
+      <h4>Організатор подій</h4>
+      <div class="track-qual">Менеджер спортивних заходів</div>
+      <ul>
+        <li>Проєктний менеджмент турнірів</li>
+        <li>Логістика і безпека заходів</li>
+        <li>Трансляції і медіа-продакшн</li>
+        <li>Робота з волонтерами</li>
+        <li>Звітність WPT / FIP-формату</li>
+      </ul>
+      <div class="employers">Event-агентства, федерації, міські спортивні відділи, WPT-оператори</div>
+    </div>
+
+    <div class="track-card">
+      <div class="track-ico">⚖️</div>
+      <h4>Суддя</h4>
+      <div class="track-qual">Суддя FIP / національна ліцензія</div>
+      <ul>
+        <li>Правила гри FIP глибоко</li>
+        <li>Суддівська практика на турнірах</li>
+        <li>Кваліфікаційний іспит FIP</li>
+        <li>Відеоарбітраж</li>
+        <li>Етика і протоколи</li>
+      </ul>
+      <div class="employers">Турніри, ліги, федерація паделу України, WPT-серія</div>
+    </div>
+
+    <div class="track-card">
+      <div class="track-ico">📊</div>
+      <h4>Статист / Аналітик</h4>
+      <div class="track-qual">Спортивний аналітик</div>
+      <ul>
+        <li>Статистичний аналіз матчів</li>
+        <li>BI-дашборди та звітність</li>
+        <li>Відеоаналіз гри</li>
+        <li>CRM клубу та fан-дані</li>
+        <li>Scout-звіти та трансфери</li>
+      </ul>
+      <div class="employers">Клуби, медіа, федерації, спортивні агентства, букмекери</div>
+    </div>
+  </div>
+
+  <div class="yellow-box" style="margin-top:32px;">
+    <strong>Що отримує кожен випускник незалежно від спеціалізації:</strong>
+    <p>Диплом держзразка (фаховий молодший бакалавр, спец. 073) + можливість складання сертифікаційного іспиту FIP (Level 1 або суддівський) + портфоліо реального проєкту з практики у партнерському клубі або федерації.</p>
+  </div>
+
+</div><!-- /tab-graduates -->
+
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- TAB 05: ЗАХОДИ І ПРАКТИКА -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div id="tab-events" class="tab-panel">
+
+  <p class="sec-label">Де навчаємо поза аудиторією</p>
+  <h2 class="sec-h2">Заходи. Практика. Партнери.</h2>
+  <div class="sec-divider"></div>
+
+  <div class="dark-box">
+    <p class="label">Принцип практики</p>
+    <p>Аудиторія — для теорії та розбору. Реальне навчання відбувається на корті, на турнірі, у клубі. <strong style="color:var(--yellow)">Мінімум 30% навчального часу — поза університетом.</strong> Кожен студент до випуску має самостійно провести хоча б один реальний захід.</p>
+  </div>
+
+  <h3 class="sec-h3" style="margin-top:32px;">📅 Річний цикл заходів кафедри</h3>
+
+  <div class="event-list">
+    <div class="event-item">
+      <div class="e-ico">🎾</div>
+      <div class="e-body">
+        <h5>Внутрішній турнір кафедри (2 рази на рік)</h5>
+        <p>Студенти самостійно організовують і проводять турнір з паделу. Одні грають — інші судять, ведуть статистику, займаються маркетингом і логістикою. Реальна точка де всі спеціалізації зустрічаються.</p>
+        <div class="e-tag"><span class="tag tag-y">Обов'язковий захід</span></div>
+      </div>
+    </div>
+    <div class="event-item">
+      <div class="e-ico">🏆</div>
+      <div class="e-body">
+        <h5>Стажування на турнірах Федерації паделу України</h5>
+        <p>Студенти виїжджають на реальні турніри в ролі суддів-стажерів, асистентів директора турніру, статистів або волонтерів маркетинг-відділу. Мінімум 1 виїзд на семестр (3–4 семестр).</p>
+        <div class="e-tag"><span class="tag tag-y">Практика</span> <span class="tag tag-dk">Від 3-го семестру</span></div>
+      </div>
+    </div>
+    <div class="event-item">
+      <div class="e-ico">🎤</div>
+      <div class="e-body">
+        <h5>Щомісячні майстер-класи від практиків</h5>
+        <p>Раз на місяць — запрошений спеціаліст: директор клубу, агент, маркетолог бренду або профі-тренер. Студенти заздалегідь готують кейс або питання. Не лекція — діалог.</p>
+        <div class="e-tag"><span class="tag tag-dk">Щомісяця</span></div>
+      </div>
+    </div>
+    <div class="event-item">
+      <div class="e-ico">🏢</div>
+      <div class="e-body">
+        <h5>Виробнича практика в партнерських клубах (3-й семестр)</h5>
+        <p>4–6 тижнів у реальному клубі або федерації. Студент отримує реальне завдання: розробити маркетингову стратегію, оптимізувати розклад, провести аналіз конкурентів. Звітність — реальному керівнику.</p>
+        <div class="e-tag"><span class="tag tag-y">Обов'язковий захід · 7 кредитів</span></div>
+      </div>
+    </div>
+    <div class="event-item">
+      <div class="e-ico">🎓</div>
+      <div class="e-body">
+        <h5>Суддівська сесія FIP (3-й або 4-й семестр)</h5>
+        <p>Офіційна підготовка і складання іспиту на суддівську ліцензію FIP у партнерстві з Федерацією паделу України. Студенти треку «Суддя» складають обов'язково, інші — за бажанням.</p>
+        <div class="e-tag"><span class="tag tag-dk">FIP-сертифікація</span></div>
+      </div>
+    </div>
+    <div class="event-item">
+      <div class="e-ico">📊</div>
+      <div class="e-body">
+        <h5>Щорічна студентська конференція «Падел Бізнес Форум»</h5>
+        <p>Студенти 2-го курсу представляють свої дипломні проєкти перед реальними роботодавцями — директорами клубів, представниками федерації та брендів. Кращі отримують оферу або партнерство.</p>
+        <div class="e-tag"><span class="tag tag-y">Щорічно</span></div>
+      </div>
+    </div>
+    <div class="event-item">
+      <div class="e-ico">🌍</div>
+      <div class="e-body">
+        <h5>Виїзд на міжнародний турнір WPT / FIP (за можливістю)</h5>
+        <p>Спостереження та стажування на турнірах WPT або FIP Major — в ролі волонтерів, студентів-аналітиків або помічників прес-служби. Зв'язки на все життя.</p>
+        <div class="e-tag"><span class="tag tag-gr">За наявністю партнерства</span></div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sec-h3" style="margin-top:40px;">🤝 Де можна залучати студентів</h3>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Місце / Організація</th><th>Що роблять студенти</th><th>Спеціалізація</th><th>Коли</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Падел-клуби Києва</strong><br><span style="font-size:12px;color:var(--muted)">Smart Court, Raquetball та ін.</span></td>
+          <td>Тренують початківців, ведуть адмін, допомагають з маркетингом</td>
+          <td><span class="tag tag-y">Тренер</span> <span class="tag tag-dk">Менеджер</span></td>
+          <td>3–4 сем.</td>
+        </tr>
+        <tr>
+          <td><strong>Федерація паделу України</strong></td>
+          <td>Судять турніри, ведуть статистику, організовують логістику</td>
+          <td><span class="tag tag-y">Суддя</span> <span class="tag tag-dk">Статист</span></td>
+          <td>3–4 сем.</td>
+        </tr>
+        <tr>
+          <td><strong>Спортивні агентства</strong></td>
+          <td>Допомагають з пошуком спонсорів, ведуть соцмережі, аналізують ринок</td>
+          <td><span class="tag tag-y">Маркетолог</span></td>
+          <td>3–4 сем.</td>
+        </tr>
+        <tr>
+          <td><strong>Event-агентства спортивного профілю</strong></td>
+          <td>Асистент директора турніру, волонтер-координатор, SMM на заході</td>
+          <td><span class="tag tag-dk">Event</span></td>
+          <td>2–4 сем.</td>
+        </tr>
+        <tr>
+          <td><strong>Спортивні клуби (футбол, баскет)</strong></td>
+          <td>Аналітичні проєкти, маркетингові дослідження, CRM</td>
+          <td><span class="tag tag-y">Аналітик</span> <span class="tag tag-dk">Маркетолог</span></td>
+          <td>4 сем.</td>
+        </tr>
+        <tr>
+          <td><strong>Міські спортивні відділи та НОК</strong></td>
+          <td>Організація міських турнірів, координація з федераціями</td>
+          <td><span class="tag tag-dk">Event</span> <span class="tag tag-y">Менеджер</span></td>
+          <td>4 сем.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div><!-- /tab-events -->
+
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- TAB 06: НОРМАТИВНА БАЗА -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div id="tab-norms" class="tab-panel">
+
+  <p class="sec-label">Документи та посилання</p>
+  <h2 class="sec-h2">Нормативна база</h2>
+  <div class="sec-divider"></div>
+
+  <div class="yellow-box">
+    <strong>Усі документи — чинні станом на 2025–2026 навчальний рік.</strong>
+    <p>Перед поданням документів до МОН або НАЗЯВО завжди перевіряйте актуальність редакції на zakon.rada.gov.ua. Нормативи змінюються — особливо ліцензійні умови.</p>
+  </div>
+
+  <ul class="norm-list">
+    <li>
+      <span class="ncode">ЗУ-1</span>
+      <div class="nbody">
+        <strong>Закон України «Про вищу освіту» №1556-VII від 01.07.2014</strong> (зі змінами 2024)<br>
+        Що регулює: структура ЗВО (ст. 1, 36), вимоги до НПП (ст. 53–56), конкурс на завідувача (ст. 54), рівні освіти (ст. 5), залучення практиків (ст. 55).<br>
+        <a href="https://zakon.rada.gov.ua/laws/show/1556-18" target="_blank">zakon.rada.gov.ua/laws/show/1556-18</a>
+      </div>
+    </li>
+    <li>
+      <span class="ncode">КМУ-1</span>
+      <div class="nbody">
+        <strong>Постанова КМУ №1187 від 30.12.2015 «Ліцензійні умови» (ред. 2024)</strong><br>
+        Що регулює: мінімум НПП (п. 6) — не менше 3 у проєктній групі, ≥2 зі ступенем; частка без ступеня ≤30% (п. 8); матеріальна база; документи для ліцензування.<br>
+        <a href="https://zakon.rada.gov.ua/laws/show/1187-2015-п" target="_blank">zakon.rada.gov.ua/laws/show/1187-2015-п</a>
+      </div>
+    </li>
+    <li>
+      <span class="ncode">МОН-1</span>
+      <div class="nbody">
+        <strong>Наказ МОН №959 від 10.07.2019 — Стандарт ВО, спец. 073 «Менеджмент» (бакалавр)</strong><br>
+        Що регулює: результати навчання, обов'язкові та вибіркові компетентності, зміст підготовки менеджерів.<br>
+        <a href="https://mon.gov.ua" target="_blank">mon.gov.ua → Стандарти ВО → 073</a>
+      </div>
+    </li>
+    <li>
+      <span class="ncode">МОН-2</span>
+      <div class="nbody">
+        <strong>Наказ МОН №686 від 15.05.2024 «Положення про акредитацію ОП»</strong><br>
+        Що регулює: 10 критеріїв акредитації НАЗЯВО, Критерій 6 — кадрові вимоги, Критерій 7 — залучення роботодавців.<br>
+        <a href="https://zakon.rada.gov.ua/go/z1013-24" target="_blank">zakon.rada.gov.ua/go/z1013-24</a>
+      </div>
+    </li>
+    <li>
+      <span class="ncode">МОН-3</span>
+      <div class="nbody">
+        <strong>Наказ МОН №450 від 07.08.2002 «Норми часу для НПП»</strong><br>
+        Що регулює: скільки академічних годин зобов'язаний відпрацювати НПП на різних ставках; розподіл навантаження між лекціями, практикою і наукою.<br>
+        <a href="https://zakon.rada.gov.ua/laws/show/z0698-02" target="_blank">zakon.rada.gov.ua/laws/show/z0698-02</a>
+      </div>
+    </li>
+    <li>
+      <span class="ncode">ЗУ-2</span>
+      <div class="nbody">
+        <strong>Закон «Про освіту» №2145-VIII від 05.09.2017</strong><br>
+        Що регулює: НРК — Національна рамка кваліфікацій (ст. 12); визнання результатів неформальної освіти для прискореного навчання (ст. 18).<br>
+        <a href="https://zakon.rada.gov.ua/laws/show/2145-19" target="_blank">zakon.rada.gov.ua/laws/show/2145-19</a>
+      </div>
+    </li>
+    <li>
+      <span class="ncode">FIP</span>
+      <div class="nbody">
+        <strong>Federación Internacional de Pádel — офіційна система сертифікації тренерів і суддів</strong><br>
+        Level 1, Level 2, Level 3 для тренерів; National Referee, International Referee для суддів. Партнерство з FIP дозволяє видавати сертифікати паралельно з дипломом ЗВО.<br>
+        <a href="https://www.padelfip.com" target="_blank">padelfip.com</a>
+      </div>
+    </li>
+    <li>
+      <span class="ncode">АГНЦ</span>
+      <div class="nbody">
+        <strong>НАЗЯВО — Національне агентство із забезпечення якості вищої освіти</strong><br>
+        Критерії акредитації, форми для самооцінювання, кабінет для подачі заявок на акредитацію.<br>
+        <a href="https://naqa.gov.ua" target="_blank">naqa.gov.ua</a>
+      </div>
+    </li>
+    <li>
+      <span class="ncode">ЄДЕБО</span>
+      <div class="nbody">
+        <strong>Єдина державна електронна база з питань освіти</strong><br>
+        Реєстрація освітньої програми, відомості про ЗВО, публічна інформація про всі акредитовані програми.<br>
+        <a href="https://edbo.gov.ua" target="_blank">edbo.gov.ua</a>
+      </div>
+    </li>
+  </ul>
+
+</div><!-- /tab-norms -->
+
+</div><!-- /page -->
+
+<footer>
+  <p><strong>КНУБА — Кафедра спортивного менеджменту</strong></p>
+  <p>Інститут ветеранів «Архітектура стійкості» · Ukraine Veterans Cluster</p>
+  <p style="margin-top:8px;">Нормативна база актуальна 2025–2026 н.р. · <a href="https://zakon.rada.gov.ua" target="_blank">zakon.rada.gov.ua</a> · <a href="https://www.knuba.edu.ua" target="_blank">knuba.edu.ua</a></p>
+</footer>
+
+<script>
+function switchTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({ top: document.querySelector('.tab-bar').offsetTop - 56, behavior: 'smooth' });
+}
+
+function toggleAcc(btn) {
+  const body = btn.nextElementSibling;
+  const isOpen = btn.classList.contains('open');
+  btn.closest('.page').querySelectorAll('.acc-btn.open').forEach(b => {
+    b.classList.remove('open');
+    b.nextElementSibling.classList.remove('open');
+  });
+  if (!isOpen) {
+    btn.classList.add('open');
+    body.classList.add('open');
+  }
+}
+</script>
+</body>
+</html>
